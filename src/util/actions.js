@@ -75,6 +75,8 @@ export const resetGameAction = (
     setCorrectWord,
     setGameOver,
     setDisabledLetters,
+    setCorrectLetters,
+    setAlmostLetters,
     setCurrentAttempt
 ) => {
     setBoard(emptyBoardMatrix())
@@ -84,6 +86,8 @@ export const resetGameAction = (
         guessedWord: false
     })
     setDisabledLetters([])
+    setCorrectLetters([])
+    setAlmostLetters([])
     setCurrentAttempt({
         attempt: 0,
         letterPos: 0

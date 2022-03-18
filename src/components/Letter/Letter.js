@@ -3,7 +3,7 @@ import { AppContext } from '../../App'
 import styles from './Letter.styles'
 
 const Letter = ({ letterPos, attemptVal }) => {
-    const { board, correctWord, currentAttempt, setDisabledLetters } = useContext(AppContext)
+    const { board, correctWord, currentAttempt, setDisabledLetters, almostLetters, setAlmostLetters, correctLetters, setCorrectLetters } = useContext(AppContext)
     const { attempt } = currentAttempt
     const letter = board[attemptVal][letterPos]
     const correct = correctWord.toUpperCase()[letterPos] === letter
@@ -12,8 +12,16 @@ const Letter = ({ letterPos, attemptVal }) => {
     const id = `${attemptVal}.${letterPos}`
 
     useEffect(() => {
-        if (letter !== '' && !correct && !almost) {
-            setDisabledLetters((prev) => [...prev, letter])
+        if (letter !== '') {
+            if (!correct && !almost) {
+                setDisabledLetters((prev) => [...prev, letter])
+            } else if (correct) {
+                if (almostLetters.includes(letter)) setAlmostLetters([...almostLetters.filter(i => i !== letter)])
+                setCorrectLetters((prev) => [...prev, letter])
+            } else if (almost) {
+                if (correctLetters.includes(letter)) setCorrectLetters([...correctLetters.filter(i => i !== letter)])
+                setAlmostLetters((prev) => [...prev, letter])
+            }
         }
 
     }, [attempt])

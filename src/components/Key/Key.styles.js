@@ -5,6 +5,12 @@ export default {
     disabled: {
         backgroundColor: '#3a393c'
     },
+    correct: {
+        backgroundColor: '#528d4e'
+    },
+    almost: {
+        backgroundColor: '#b49f39'
+    },
     key: {
         width: '50px',
         height: '70px',

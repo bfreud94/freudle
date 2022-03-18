@@ -27,6 +27,8 @@ const App = () => {
         guessedWord: false
     })
     
+    const [almostLetters, setAlmostLetters] = useState([])
+    const [correctLetters, setCorrectLetters] = useState([])
     const [disabledLetters, setDisabledLetters] = useState([])
 
     const [correctWord, setCorrectWord] = useState('')
@@ -66,6 +68,8 @@ const App = () => {
         setCorrectWord,
         setGameOver,
         setDisabledLetters,
+        setCorrectLetters,
+        setAlmostLetters,
         setCurrentAttempt
     )
     return (
@@ -82,6 +86,10 @@ const App = () => {
                     correctWord,
                     disabledLetters,
                     setDisabledLetters,
+                    almostLetters,
+                    setAlmostLetters,
+                    correctLetters,
+                    setCorrectLetters,
                     gameOver,
                     setGameOver,
                     resetGame}}>

@@ -3,8 +3,8 @@ import Key from '../Key/Key'
 import { AppContext } from '../../App'
 import styles from './Keyboard.styles'
 
-const Keyboard = (props) => {
-    const { onSelectLetter, onDelete, onEnter, disabledLetters } = useContext(AppContext)
+const Keyboard = () => {
+    const { onSelectLetter, onDelete, onEnter, disabledLetters, correctLetters, almostLetters } = useContext(AppContext)
 
     const topRow = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
     const middleRow = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L']
@@ -30,11 +30,38 @@ const Keyboard = (props) => {
     }, [handleKeyboard])
     return (
         <div style={styles.keyboard} onKeyDown={handleKeyboard}>
-            <div style={styles.topRow}>{topRow.map(letter => <Key key={letter} keyVal={letter} disabled={disabledLetters.includes(letter)} />)}</div>
-            <div style={styles.middleRow}>{middleRow.map(letter => <Key key={letter} keyVal={letter} disabled={disabledLetters.includes(letter)} />)}</div>
+            <div style={styles.topRow}>
+                {topRow.map(letter => (
+                    <Key
+                        key={letter}
+                        keyVal={letter}
+                        disabled={disabledLetters.includes(letter)}
+                        correct={correctLetters.includes(letter)}
+                        almost={almostLetters.includes(letter)}
+                    />))}
+            </div>
+            <div style={styles.middleRow}>
+                {middleRow.map(letter => (
+                    <Key
+                        key={letter}
+                        keyVal={letter}
+                        disabled={disabledLetters.includes(letter)}
+                        correct={correctLetters.includes(letter)}
+                        almost={almostLetters.includes(letter)}
+                    />
+                ))}
+            </div>
             <div style={styles.bottomRow}>
                 <Key keyVal={'ENTER'} bigKey={true} />
-                {bottomRow.map(letter => <Key key={letter} keyVal={letter} disabled={disabledLetters.includes(letter)}/>)}
+                {bottomRow.map(letter => (
+                    <Key
+                        key={letter}
+                        keyVal={letter}
+                        disabled={disabledLetters.includes(letter)}
+                        correct={correctLetters.includes(letter)}
+                        almost={almostLetters.includes(letter)}
+                    />
+                ) )}
                 <Key keyVal={'DELETE'} bigKey={true} />
             </div>
         </div>
