@@ -1664,5 +1664,7 @@ export default [
     'mover',
     'minty',
     'bloke',
-    'clone'
+    'clone',
+    'poach',
+    'ghoul'
  ]
