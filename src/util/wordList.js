@@ -1024,7 +1024,6 @@ export default [
     'scorn',
     'chess',
     'crate',
-    'shyly',
     'tulip',
     'forge',
     'nymph',
@@ -1632,7 +1631,6 @@ export default [
     'sable',
     'shirk',
     'filet',
-    'refit',
     'gauss',
     'lapel',
     'jaunt',
@@ -1666,5 +1664,12 @@ export default [
     'bloke',
     'clone',
     'poach',
-    'ghoul'
+    'ghoul',
+    'wench',
+    'intro',
+    'outro',
+    'ionic',
+    'stunk',
+    'audio',
+    'pudgy'
  ]
