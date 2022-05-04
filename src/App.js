@@ -93,7 +93,7 @@ const App = () => {
                     gameOver,
                     setGameOver,
                     resetGame}}>
-                <div style={styles.game}>
+                <div style={{...styles.game, ...(gameOver.isGameOver && {...styles.gameOver})}}>
                     <Board wordLength={wordLength} totalGuesses={totalGuesses} />
                     {!gameOver.isGameOver ? <Keyboard /> : <GameOver />}
                 </div>

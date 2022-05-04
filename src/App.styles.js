@@ -12,6 +12,9 @@ export default {
         paddingTop: '50px',
         width: '100vw',
     },
+    gameOver: {
+        height: '100vh'
+    },
     tileStyles: {
         correct: {
             backgroundColor: '#528d4e'
