@@ -13,8 +13,6 @@ export const AppContext = createContext()
 const wordLength = 5
 const totalGuesses = 6
 
-const test = ''
-
 const App = () => {
     const [board, setBoard ] = useState(emptyBoardMatrix())
     const [currentAttempt, setCurrentAttempt] = useState({
